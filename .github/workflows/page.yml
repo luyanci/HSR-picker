@@ -1,0 +1,42 @@
+name: Pages
+
+on:
+ workflow_dispatch:
+ workflow_call:
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: "16"
+      - name: Sync submodule
+        run: |
+         git submodule update --init --recursive
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: ./HSR-Warp-Simulator/node_modules
+          key: ${{ runner.os }}-npm-frontend-cache
+          restore-keys: |
+            ${{ runner.os }}-npm-frontend-cache
+      - name: Install Dependencies
+        run: |
+         cd HSR-Warp-Simulator
+         yarn install
+      - name: Build
+        run: |
+         cd HSR-Warp-Simulator
+         yarn run build
+      - name: Package
+        run: |
+         cd HSR-Warp-Simulator
+         7z a -tzip frontend.zip ./.vercel/output/static
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend
+          path: HSR-Warp-Simulator/frontend.zip
