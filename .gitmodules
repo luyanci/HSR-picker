@@ -1,0 +1,3 @@
+[submodule "HSR-Warp-Simulator"]
+	path = HSR-Warp-Simulator
+	url = https://github.com/luyanci/HSR-Warp-Simulator
