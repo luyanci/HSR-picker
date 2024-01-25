@@ -6,7 +6,7 @@ const path = require('path');
 let e = express();
 
 // e.use(express.static('./static'))
-e.use(express.static(path.join(__dirname, 'static')))
+e.use(express.static(path.join(__dirname, 'output')))
 
 let port;
 getPort().then((value) => {
