@@ -1,14 +1,14 @@
 {
-  "name": "genshin-impact-class",
+  "name": "hsr-simulator",
   "version": "0.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager ./ genish-impact --electron-version=21.4.4 --overwrite --asar",
-    "build-darwin-x64": "electron-packager ./ genish-impact --arch=x64 --electron-version=21.4.4 --overwrite --asar",
-    "build-win": "electron-packager ./ genish-impact  --platform=win32 --electron-version=21.4.4 --arch=x64 --overwrite --asar",
-    "build-win32": "electron-packager ./ genish-impact  --platform=win32 --electron-version=21.4.4 --arch=ia32 --overwrite --asar"
+    "build": "electron-packager ./ hsr-simulator --electron-version=21.4.4 --overwrite --asar",
+    "build-darwin-x64": "electron-packager ./ hsr-simulator --arch=x64 --electron-version=21.4.4 --overwrite --asar",
+    "build-win": "electron-packager ./ hsr-simulator  --platform=win32 --electron-version=21.4.4 --arch=x64 --overwrite --asar",
+    "build-win32": "electron-packager ./ hsr-simulator  --platform=win32 --electron-version=21.4.4 --arch=ia32 --overwrite --asar"
   },
   "author": "",
   "license": "ISC",
