@@ -20,10 +20,10 @@ jobs:
     runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 16.x
+      - name: Use Node.js 20.x
         uses: actions/setup-node@v4
         with:
-          node-version: "16"
+          node-version: "20"
       - name: Cache NPM dependencies
         uses: actions/cache@v3
         with:
