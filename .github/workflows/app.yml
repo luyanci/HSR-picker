@@ -52,9 +52,9 @@ jobs:
       - name: Package (${{ runner.os }})
         run: |
          cd electron-static
-         7z a -tzip genish-impact-${{ runner.os }}-x64.zip ./genish-impact-*
+         7z a -tzip hsr-simulator-${{ runner.os }}-x64.zip ./hsr-simulator-*
       - name: Upload (${{ runner.os }})
         uses: actions/upload-artifact@v3
         with:
-          name: genish-impact-${{ runner.os }}
-          path: electron-static/genish-impact-${{ runner.os }}-x64.zip
+          name: hsr-simulator-${{ runner.os }}
+          path: electron-static/hsr-simulator-${{ runner.os }}-x64.zip
